@@ -10,6 +10,16 @@ function calcular($num1, $num2, $operacion)
         case 'restar':
             $resultado = $num1 - $num2;
             break;
+        case 'multiplicar':
+            $resultado = $num1 * $num2;
+            break;
+        case 'dividir':
+            if ($num2 != 0) {
+                $resultado = $num1 / $num2;
+            } else {
+                $resultado = "Error, no podemos dividir entre 0!!!";
+            }
+            break;
         default:
             $resultado = "No se puede realizar esta operación";
             break;
@@ -36,4 +46,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Después de redirigir, el script PHP se detiene inmediatamente gracias a la función exit();, asegurándose de que no se ejecute ningún código adicional después de la redirección
     */
 }
-?>
